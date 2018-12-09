@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class='header'>
+					<h2 class='title'>Document Object Model</h2>
+					<p class='name'>brought you by Alexey Polevikov</p>
+				</section>
+				<section>
+					<section>
+						<h2>What is DOM?</h2>
+						<p class="fragment">The HTML DOM is a standard object model and programming interface for HTML</p>
+					</section>
+					<section data-transition="convex-in concave-out">
+							<h2>Why use DOM?</h2>
+							<ul>
+								<li class="fragment">The HTML elements as objects</li>
+								<li class="fragment">The properties of all HTML elements</li>
+								<li class="fragment">The methods to access all HTML elements</li>
+								<li class="fragment">The events for all HTML elements</li>
+							</ul>
+					</section>							
+				</section>
+				<section>
+					<section>
+						<h2>Types of nodes</h2>
+						<p class="fragment">There are different types of nodes, the main ones are:</p>
+						<ul>
+							<li class="fragment">Document: the document Node, the start of the tree</li>
+							<li class="fragment">Element: an HTML tag</li>
+							<li class="fragment">Attr: an attribute of a tag</li>
+							<li class="fragment">Text: the text content of an Element or Attr Node</li>
+							<li class="fragment">Comment: an HTML comment</li>
+							<li class="fragment">DocumentType: the Doctype declaration</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>DOM Tree</h2>
+					</section>
+					<section>
+						<img src="dom-tree.png" alt="dom-tree">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Traversing the DOM Tree</h2>
+						<p class="fragment">Once you have an element, there are a number of elements that let you get elements from elsewhere in the tree.</p>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">element.parentNode
+								(Returns the parent node of the given element)</li>
+							<li class="fragment">element.childNodes
+								(Returns a collection of child nodes of the given element)</li>
+							<li class="fragment">element.firstChild
+								(Returns the node’s first child in the tree, or null if the node is childless)</li>
+							<li class="fragment">element.lastChild
+								(Returns the node’s last child in the tree, or null if the node is childless)</li>
+							<li class="fragment">element.nextSibling
+								(Returns the node immediately following the specified one in its parent’s childNodes list, or null if the specified node is the last node in that list)</li>
+							<li class="fragment">element.previousSibling
+								(Returns the node immediately preceding the specified one in its parent’s childNodes list, null if the specified node is the first in that list)</li>
+						</ul>						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>The document Object</h2>
+						<p class="fragment">The document object represents the HTML document itself. It is at the root of the DOM tree.</p>
+					</section>
+					<section>
+						<p>How to get element from document object</p>
+						<ul>
+							<li class="fragment">document.getElementById</li>
+							<li class="fragment">document.getElementsByClassName</li>
+							<li class="fragment">document.getElementsByTagName</li>
+							<li class="fragment">other</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>DOM Element Contents</h2>
+					<ul>
+						<li class="fragment">element.innerHTML</li>
+						<li class="fragment">element.textContent</li>
+					</ul>
+					
+				</section>
+				<section>
+					<section>
+						<h2>Events</h2>
+					</section>
+					<section>
+						<ul>
+							<li class="fragment">element.addEventListener(type, listener[, options]);</li>
+							<li class="fragment">element.removeEventListener(type, listener[, options]);</li>
+							<li class="fragment">element.onclick = functionRef;</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Thanks!</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
